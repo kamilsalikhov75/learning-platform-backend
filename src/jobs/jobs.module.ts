@@ -13,6 +13,7 @@ import { Job, JobSchema } from './job.schema';
       },
     ]),
   ],
+
   controllers: [JobsController],
   providers: [JobsService],
 })

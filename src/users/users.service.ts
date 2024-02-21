@@ -5,6 +5,7 @@ import { Model } from 'mongoose';
 import { HashService } from './hash.service';
 import { Role, User, UserDocument } from './user.schema';
 import { JwtService } from '@nestjs/jwt';
+import { UpdateUserDto } from './update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -23,7 +24,13 @@ export class UsersService {
   }
 
   async getUserById(id: string) {
-    return this.usersModel.findById(id).exec();
+    return this.usersModel.findById(id).populate('job').exec();
+  }
+
+  async updateUser(userId: string, updateUserDto: UpdateUserDto) {
+    await this.usersModel.findByIdAndUpdate(userId, updateUserDto).exec();
+
+    return this.getUserById(userId);
   }
 
   async registerUser(createUserDto: CreateUserDto) {
