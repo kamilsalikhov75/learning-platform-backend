@@ -3,8 +3,9 @@ import mongoose, { Document } from 'mongoose';
 import { Job } from 'src/jobs/job.schema';
 
 export enum Role {
-  User = 'user',
+  Default = 'default',
   Admin = 'admin',
+  Supervisor = 'supervisor',
 }
 
 export enum Sex {

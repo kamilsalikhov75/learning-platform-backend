@@ -44,7 +44,7 @@ export class UsersService {
       createUser.password,
     );
 
-    createUser.role = Role.User;
+    createUser.role = Role.Default;
 
     await createUser.save();
 
