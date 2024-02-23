@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
 
 @Schema()
 export class Job {
@@ -9,6 +10,6 @@ export class Job {
   title: string;
 }
 
-export type JobDocument = Job & Document;
+export type JobDocument = HydratedDocument<Job>;
 
 export const JobSchema = SchemaFactory.createForClass(Job);

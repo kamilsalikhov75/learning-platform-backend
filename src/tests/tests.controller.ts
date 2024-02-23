@@ -10,7 +10,10 @@ import {
 import { TestsService } from './tests.service';
 import { CreateTestDto } from './dto/create-test.dto';
 import { UpdateTestDto } from './dto/update-test.dto';
+import { Roles } from 'src/decorators/roles.decorator';
+import { Role } from 'src/users/user.schema';
 
+@Roles([Role.Admin])
 @Controller('tests')
 export class TestsController {
   constructor(private readonly testsService: TestsService) {}
