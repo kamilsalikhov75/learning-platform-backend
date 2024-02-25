@@ -4,18 +4,20 @@ import { CreateJobDto } from './create-job.dto';
 import { Roles } from 'src/decorators/roles.decorator';
 import { Role } from 'src/users/user.schema';
 import { ApiTags } from '@nestjs/swagger';
+import { Public } from 'src/decorators/public.decorator';
 
 @ApiTags('jobs')
-@Roles([Role.Admin])
 @Controller('jobs')
 export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
 
+  @Public()
   @Get()
   getJobs() {
     return this.jobsService.getJobs();
   }
 
+  @Roles([Role.Admin])
   @Post()
   addJob(@Body() createJobDto: CreateJobDto) {
     return this.jobsService.addJob(createJobDto);
