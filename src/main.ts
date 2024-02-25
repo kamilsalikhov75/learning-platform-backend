@@ -10,7 +10,7 @@ async function bootstrap() {
     .setTitle('Learning Platform')
     .setDescription('The learning platform API description')
     .setVersion('1.0')
-    .addTag('cats')
+    .addTag('')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

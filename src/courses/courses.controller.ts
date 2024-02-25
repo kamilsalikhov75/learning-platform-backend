@@ -7,17 +7,17 @@ import {
   Param,
   Delete,
   Req,
-  UseGuards,
 } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { Request } from 'express';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { Role, UserDocument } from 'src/users/user.schema';
-import { AuthGuard } from '@nestjs/passport';
 import { JobDocument } from 'src/jobs/job.schema';
 import { Roles } from 'src/decorators/roles.decorator';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('courses')
 @Roles([Role.Admin])
 @Controller('courses')
 export class CoursesController {

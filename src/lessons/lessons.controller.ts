@@ -12,7 +12,9 @@ import { CreateLessonDto } from './dto/create-lesson.dto';
 import { UpdateLessonDto } from './dto/update-lesson.dto';
 import { Roles } from 'src/decorators/roles.decorator';
 import { Role } from 'src/users/user.schema';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('lessons')
 @Roles([Role.Admin])
 @Controller('lessons')
 export class LessonsController {

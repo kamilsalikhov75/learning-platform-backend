@@ -12,7 +12,9 @@ import { CreateTestDto } from './dto/create-test.dto';
 import { UpdateTestDto } from './dto/update-test.dto';
 import { Roles } from 'src/decorators/roles.decorator';
 import { Role } from 'src/users/user.schema';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('tests')
 @Roles([Role.Admin])
 @Controller('tests')
 export class TestsController {

@@ -4,7 +4,6 @@ import { UpdateCourseDto } from './dto/update-course.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Course, CourseDocument } from './course.schema';
 import { Model } from 'mongoose';
-import { FindCourseDto } from './dto/find-course.dto';
 
 @Injectable()
 export class CoursesService {

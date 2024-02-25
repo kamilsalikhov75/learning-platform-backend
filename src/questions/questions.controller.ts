@@ -12,7 +12,9 @@ import { CreateQuestionDto } from './dto/create-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
 import { Role } from 'src/users/user.schema';
 import { Roles } from 'src/decorators/roles.decorator';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('questions')
 @Roles([Role.Admin])
 @Controller('questions')
 export class QuestionsController {
