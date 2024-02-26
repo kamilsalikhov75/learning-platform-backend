@@ -15,7 +15,7 @@ import { Role } from 'src/users/user.schema';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('lessons')
-@Roles([Role.Admin])
+//@Roles([Role.Admin])
 @Controller('lessons')
 export class LessonsController {
   constructor(private readonly lessonsService: LessonsService) {}
@@ -28,6 +28,11 @@ export class LessonsController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.lessonsService.findOne(id);
+  }
+
+  @Get('/course/:courseId')
+  findByCourse(@Param('courseId') courseId: string) {
+    return this.lessonsService.findByCourse(courseId);
   }
 
   @Patch('orders')

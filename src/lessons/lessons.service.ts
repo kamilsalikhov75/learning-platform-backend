@@ -24,6 +24,11 @@ export class LessonsService {
     return lesson;
   }
 
+  async findByCourse(courseId: string) {
+    const lessons = await this.lessonModel.find({ course: courseId });
+    return lessons;
+  }
+
   async update(id: string, updateLessonDto: UpdateLessonDto) {
     const { _id, ...lessonInfo } = updateLessonDto;
     const updatedLesson = await this.lessonModel.findByIdAndUpdate(
