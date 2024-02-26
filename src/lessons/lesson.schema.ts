@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
 
 export type LessonDocument = HydratedDocument<Lesson>;
 
@@ -12,6 +12,13 @@ export class Lesson {
     required: true,
   })
   html: string;
+
+  @Prop({
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Course',
+    required: true,
+  })
+  course: string;
 
   @Prop({ required: true })
   order: number;

@@ -12,6 +12,7 @@ import { LessonsModule } from './lessons/lessons.module';
 import { CoursesModule } from './courses/courses.module';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtGuard } from './guards/jwt.guard';
+import { QualifyingsModule } from './qualifyings/qualifyings.module';
 
 const globalGuard = {
   provide: APP_GUARD,
@@ -29,6 +30,7 @@ const globalGuard = {
     TestsModule,
     LessonsModule,
     CoursesModule,
+    QualifyingsModule,
   ],
   controllers: [AppController],
   providers: [AppService, globalGuard],

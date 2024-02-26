@@ -13,12 +13,6 @@ export class Course {
 
   @Prop({
     type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Lesson',
-  })
-  lessons: Lesson[];
-
-  @Prop({
-    type: [mongoose.Schema.Types.ObjectId],
     ref: 'Job',
     required: true,
   })
