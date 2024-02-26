@@ -17,7 +17,7 @@ export class CoursesService {
   }
 
   async findAll() {
-    return await this.courseModel.find();
+    return await this.courseModel.find().populate('jobs');
   }
 
   async findByJob(jobId: string) {

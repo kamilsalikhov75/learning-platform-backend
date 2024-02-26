@@ -17,6 +17,7 @@ export class JobsController {
     return this.jobsService.getJobs();
   }
 
+  @Roles([Role.Admin])
   @Post()
   addJob(@Body() createJobDto: CreateJobDto) {
     return this.jobsService.addJob(createJobDto);
