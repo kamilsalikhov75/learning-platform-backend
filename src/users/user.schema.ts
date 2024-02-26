@@ -111,7 +111,6 @@ export class User {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Qualifying',
-    required: true,
   })
   qualifying: Qualifying;
 }

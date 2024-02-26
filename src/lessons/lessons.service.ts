@@ -25,8 +25,10 @@ export class LessonsService {
   }
 
   async findByCourse(courseId: string) {
-    const lessons = await this.lessonModel.find({ course: courseId });
-    return lessons;
+    const lessons: Lesson[] = await this.lessonModel.find({ course: courseId });
+    return lessons.sort((a, b) => {
+      return a.order - b.order;
+    });
   }
 
   async update(id: string, updateLessonDto: UpdateLessonDto) {

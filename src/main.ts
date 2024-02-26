@@ -4,7 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors({ origin: true, methods: ['GET', 'POST', 'PUT'] });
+  app.enableCors({ origin: true, methods: ['GET', 'POST', 'PUT', 'PATCH'] });
 
   const config = new DocumentBuilder()
     .setTitle('Learning Platform')

@@ -8,9 +8,7 @@ export class Lesson {
   @Prop({ required: true })
   title: string;
 
-  @Prop({
-    required: true,
-  })
+  @Prop()
   html: string;
 
   @Prop({
@@ -20,7 +18,7 @@ export class Lesson {
   })
   course: string;
 
-  @Prop({ required: true })
+  @Prop()
   order: number;
 }
 

@@ -21,9 +21,10 @@ export class CoursesService {
   }
 
   async findByJob(jobId: string) {
-    return await this.courseModel
-      .find({ jobs: { $in: jobId } }, { _id: 0, title: 1, jobs: 1 })
-      .populate('jobs', { _id: 0 });
+    return await this.courseModel.find(
+      { jobs: { $in: jobId } },
+      { title: 1, jobs: 1 },
+    );
   }
 
   async findOne(id: string) {
