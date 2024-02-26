@@ -86,10 +86,11 @@ export class User {
   password: string;
 
   @Prop({
-    type: [FinishedLesson],
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Lesson',
     required: true,
   })
-  finishedLessons: [FinishedLesson];
+  finishedLessons: Lesson[];
 
   @Prop({
     type: [FinishedTest],
