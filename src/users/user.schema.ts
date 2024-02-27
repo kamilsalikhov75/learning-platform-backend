@@ -21,15 +21,6 @@ export enum Sex {
 export type UserDocument = User & Document;
 
 @Schema({ _id: false })
-export class FinishedLesson {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Course', required: true })
-  course: Course;
-
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Lesson', required: true })
-  lesson: Lesson;
-}
-
-@Schema({ _id: false })
 export class Answer {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
