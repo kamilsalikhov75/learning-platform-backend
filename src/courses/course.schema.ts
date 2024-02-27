@@ -19,7 +19,7 @@ export class Course {
   jobs: Job[];
 
   @Prop({
-    type: [mongoose.Schema.Types.ObjectId],
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Test',
   })
   test: Test;

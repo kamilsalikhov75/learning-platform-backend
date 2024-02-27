@@ -12,7 +12,6 @@ export class Test {
   @Prop({
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'Question',
-    required: true,
   })
   questions: Question[];
 }

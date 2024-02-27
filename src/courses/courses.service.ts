@@ -21,10 +21,7 @@ export class CoursesService {
   }
 
   async findByJob(jobId: string) {
-    return await this.courseModel.find(
-      { jobs: { $in: jobId } },
-      { title: 1, jobs: 1 },
-    );
+    return await this.courseModel.find({ jobs: { $in: jobId } });
   }
 
   async findOne(id: string) {
